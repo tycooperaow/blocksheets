@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "motivationbot-hgnwif": {
+      "hosting": {
+        "blocksheets": [
+          "blocksheets"
+        ]
+      }
+    }
+  }
+}

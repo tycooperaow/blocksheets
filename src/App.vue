@@ -48,6 +48,17 @@ html {
     --link-dark: #11607E;
     --bg-dark: #545454;
 }
+#nav a {
+  color: var(--primary);
+  margin: 0 1rem;
+}
+#nav{
+  width:100%;
+  display:flex;
+  font-size: 1.2rem;
+  margin: 1rem;
+  justify-content:flex-start;
+}
 .primary-btn{
   background-color: var(--primary);
   padding: 1rem 2rem;

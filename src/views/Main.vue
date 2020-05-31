@@ -22,7 +22,6 @@
     <input type="text" v-model="query_transaction" class="address-add" placholder="Enter Ether Address"/><button class="" @click="getTransactions(query_transaction)">Get Transactions</button>
     <button class="" @click="getAllTokenBalances(query_transaction)">Get Token Balances</button>
     <!-- <button @click="getAccountsByMnemonic()">Get Accounts Mnemonic</button> -->
-    {{addressbymnemonic}}
 
     <p>Your Dai Balance is: {{accountBal[1]['amount']}}</p>
     <p>Your Eth Balance is: {{accountBal[0]['amount']}}</p>
@@ -45,7 +44,6 @@ data(){
   return{
     processing: false,
     query_transaction: '',
-    addressbymnemonic: '',
     currentAddress: '',
     feedback: '',
     ethusd: 0,
@@ -63,7 +61,7 @@ data(){
       {token:'bnb', amount:0, fiat_amount:0, coin_addr: '0xB8c77482e45F1F44dE1745F52C74426C631bDD52', decimal: 18},
     ],
     transactions: [],
-    api_token: '<YOUR_API_ETHERSCAN>',
+    api_token: process.env.ETHERSCANAPI,
   }
 },
 methods:{

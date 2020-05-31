@@ -8,7 +8,7 @@
       </tr>
       <tr v-for="(accbal, idx) in accountBal" :key="idx">
         <td colspan="1" class="token-area">{{accbal['token']}}</td>
-        <td colspan="1">{{(accbal['amount']).toFixed(4)}}</td>
+        <td colspan="1">{{accbal['amount'].toFixed(4)}}</td>
         <td colspan="1">{{(accbal['fiat_amount']).toFixed(2)}}</td>
       </tr>
     </table>
@@ -50,6 +50,13 @@ export default{
   methods:{
   gotoEtherScan(scan){
     window.open(`https://etherscan.io/tx/${scan}`, '_blank');
+  },
+  autoSet(num){
+    if(isNaN(num)){
+      return num
+    }else{
+        return 0
+    }
   },
   setLocalTime(epoch){
     var date = new Date(Number(epoch)*1000);
